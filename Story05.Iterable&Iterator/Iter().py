@@ -23,12 +23,22 @@ print(dir(t))
 #hasattr()
 print(hasattr(t,'__iter__'))
 
-#for문과 iterator
+# #for문과 iterable 객체
+# li=[i for i in range(1,10) if i%3==0]
+# ir=iter(li)
+# while True:
+#     try:
+#         i=next(ir)
+#         print(i,end=" ")
+#     except StopIteration:
+#         break
+
+#for문과 iterator 객체
 li=[i for i in range(1,10) if i%3==0]
 ir=iter(li)
-while True:
-    try:
-        i=next(ir)
-        print(i,end=" ")
-    except StopIteration:
-        break
+for i in ir:
+    print(i,end=" ")
+
+r1=iter([1,2,3])
+r2=iter(r1)
+print(r1 is r2)
